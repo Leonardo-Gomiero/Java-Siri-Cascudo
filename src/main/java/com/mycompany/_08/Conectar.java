@@ -40,16 +40,7 @@ public class Conectar {
     
     
     
-    public void insereDireto (Connection con){
-        try{
-            Statement stmt = con.createStatement();
-            boolean rs = stmt.execute("INSERT INTO aluno(codigo, nome," + "email, codcidade)" + "VALUES (null, \"José\", \"jose@gmail.com\", 3);");
-        }
-        catch (Exception e){
-            System.out.println("Erro!!" + e);
-        }
-        
-    }
+    
     
     public void closeConnectionMySql (Connection con) {
         
@@ -91,6 +82,45 @@ public class Conectar {
             ResultSet rs = stml.executeQuery("select * from Funcionarios");
             while (rs.next()){
                 System.out.println("\n   CPF:" + rs.getLong(1) +"\n   Nome:" + rs.getString(2) + "\n   RG:" + rs.getString(3) + "\n   Salário:" + rs.getFloat(4) + "\n   CEP: " + rs.getInt(5));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    public void novoItemCardapio(Connection con, String nome, String tipo, float valor, String composicao){
+        try{
+            String sql = "INSERT IGNORE INTO Funcionarios VALUES (null,?,?,?,?);";
+            
+            PreparedStatement pstm = con.prepareStatement(sql);
+            
+            
+            pstm.setString(1, nome);
+            pstm.setString(2, tipo);
+            pstm.setFloat(3, valor);
+            pstm.setString(4, composicao);
+            
+            
+            pstm.execute();
+            
+        }catch(Exception e){
+            System.out.println("Erro ao inserir!" + e);
+        }
+    
+    }
+    
+    public void consultaCardapio(Connection con) {
+        try {
+            Statement stml = con.createStatement();
+            ResultSet rs = stml.executeQuery("select * from Cardapio");
+            while (rs.next()){
+                System.out.println(
+                        "\n   ID:" + rs.getInt(1) +
+                        "\n   Nome:" + rs.getString(2) +
+                        "\n   Tipo:" + rs.getString(3) +
+                        "\n   Valor:" + rs.getFloat(4) +
+                        "\n   Composição: " + rs.getString(5)
+                );
             }
         } catch (Exception e) {
             System.out.println(e);
