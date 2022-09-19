@@ -81,7 +81,13 @@ public class Conectar {
             Statement stml = con.createStatement();
             ResultSet rs = stml.executeQuery("select * from Funcionarios");
             while (rs.next()){
-                System.out.println("\n   CPF:" + rs.getLong(1) +"\n   Nome:" + rs.getString(2) + "\n   RG:" + rs.getString(3) + "\n   Salário:" + rs.getFloat(4) + "\n   CEP: " + rs.getInt(5));
+                System.out.println(
+                        "\n   CPF:" + rs.getLong(1) +
+                        "\n   Nome:" + rs.getString(2) +
+                        "\n   RG:" + rs.getString(3) +
+                        "\n   Salário:" + rs.getFloat(4) +
+                        "\n   CEP: " + rs.getInt(5)
+                );
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -242,5 +248,19 @@ public class Conectar {
         }
     }
     
+    public void realizarLogin(Connection con, long cpf, String senha) {
+        try {
+            Statement stml = con.createStatement();
+            ResultSet rs = stml.executeQuery("select CPF from Funcionarios");
+            while (rs.next()){
+                
+                        if(rs.getLong(1) == cpf){
+                            System.out.println("É verdade");
+                        }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
 }
