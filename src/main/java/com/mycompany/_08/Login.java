@@ -184,10 +184,16 @@ public class Login extends javax.swing.JFrame {
         
         
         
-        obj.realizarLogin(conexao, cpf, senha2);
+        boolean status_login = obj.realizarLogin(conexao, cpf, senha2);
         
+        if(status_login){
+            
+            MenuInicial criar = new MenuInicial();
         
-        dispose();
+            dispose();
+
+            criar.setVisible(true);
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

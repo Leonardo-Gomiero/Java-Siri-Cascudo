@@ -6,6 +6,7 @@ package com.mycompany._08;
 
 
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -248,19 +249,52 @@ public class Conectar {
         }
     }
     
-    public void realizarLogin(Connection con, long cpf, String senha) {
+    public boolean realizarLogin(Connection con, long cpf, String senha) {
+        
+        boolean saida = false;
+        
         try {
             Statement stml = con.createStatement();
-            ResultSet rs = stml.executeQuery("select CPF from Funcionarios");
-            while (rs.next()){
+            
+            ResultSet rsCPF = stml.executeQuery("select CPF from Funcionarios");
+            
+            boolean status_cpf = false;
+            boolean status_senha = false;
+            
+            while (rsCPF.next()){
                 
-                        if(rs.getLong(1) == cpf){
+                        if(rsCPF.getLong(1) == cpf){
                             System.out.println("É verdade");
+                            status_cpf = true;
+                        }else{
+                            System.out.println("");
                         }
+                        
+                         
             }
+            if(!status_cpf){
+                JOptionPane.showMessageDialog(null, "CPF não cadastrado.");
+            }else{
+                ResultSet rsSenha = stml.executeQuery("select Senha from Funcionarios where CPF = " + cpf);
+                 while (rsSenha.next()){
+                     
+                        if(rsSenha.getString(1).equals(senha)){
+                            System.out.println("É verdade");
+                            JOptionPane.showMessageDialog(null, "Login realizado com sucesso");
+                            saida = true;
+                            
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Senha incorreta.");
+                            
+                        }
+                 } 
+            }
+            
         } catch (Exception e) {
             System.out.println(e);
         }
+        
+        return saida;
     }
     
 }
