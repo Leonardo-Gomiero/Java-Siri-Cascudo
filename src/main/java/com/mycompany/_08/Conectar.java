@@ -88,16 +88,17 @@ public class Conectar {
         }
     }
     
-    public void novoItemCardapio(Connection con, String nome, String tipo, float valor, String composicao){
+    public void novoItemCardapio(Connection con, String nome, String tipo, int valor, String composicao){
         try{
-            String sql = "INSERT IGNORE INTO Funcionarios VALUES (null,?,?,?,?);";
+            
+            String sql = "INSERT IGNORE INTO Cardapio VALUES (null,?,?,?,?);";
             
             PreparedStatement pstm = con.prepareStatement(sql);
             
             
             pstm.setString(1, nome);
             pstm.setString(2, tipo);
-            pstm.setFloat(3, valor);
+            pstm.setInt(3, valor);
             pstm.setString(4, composicao);
             
             
