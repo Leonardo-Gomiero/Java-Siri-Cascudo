@@ -164,4 +164,46 @@ public class Conectar {
             System.out.println(e);
         }
     }
+    
+    public void novoFornecedor(Connection con, long cnpj, String nome, String produto){
+        try{
+            
+            String sql = "INSERT IGNORE INTO Fornecedores VALUES (?,?,?);";
+            
+            PreparedStatement pstm = con.prepareStatement(sql);
+            
+            
+            pstm.setLong(1, cnpj);
+            pstm.setString(2, nome);
+            pstm.setString(3, produto);
+            
+            
+            
+            pstm.execute();
+            
+        }catch(Exception e){
+            System.out.println("Erro ao inserir!" + e);
+        }
+    
+    }
+    
+    public void consultaFornecedor(Connection con) {
+        try {
+            Statement stml = con.createStatement();
+            ResultSet rs = stml.executeQuery("select * from Fornecedores");
+            while (rs.next()){
+                System.out.println(
+                        "\n   ID:" + rs.getLong(1) +
+                        "\n   Nome:" + rs.getString(2) +
+                        "\n   Produto:" + rs.getString(3)
+                );
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    
+    
+    
 }
