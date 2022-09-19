@@ -127,4 +127,41 @@ public class Conectar {
             System.out.println(e);
         }
     }
+    
+    
+    public void novoServicoDelivery(Connection con, String nome, int taxa){
+        try{
+            
+            String sql = "INSERT IGNORE INTO Delivery VALUES (null,?,?);";
+            
+            PreparedStatement pstm = con.prepareStatement(sql);
+            
+            
+            pstm.setString(1, nome);
+            pstm.setInt(2, taxa);
+            
+            
+            pstm.execute();
+            
+        }catch(Exception e){
+            System.out.println("Erro ao inserir!" + e);
+        }
+    
+    }
+    
+    public void consultaDelivery(Connection con) {
+        try {
+            Statement stml = con.createStatement();
+            ResultSet rs = stml.executeQuery("select * from Delivery");
+            while (rs.next()){
+                System.out.println(
+                        "\n   ID:" + rs.getInt(1) +
+                        "\n   Nome:" + rs.getString(2) +
+                        "\n   Taxa:" + rs.getInt(3)
+                );
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }
