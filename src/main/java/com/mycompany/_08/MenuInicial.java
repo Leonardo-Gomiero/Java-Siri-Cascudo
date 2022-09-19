@@ -31,7 +31,9 @@ public class MenuInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        LblNovoCardapio = new javax.swing.JLabel();
+        LblNovoFornecedor = new javax.swing.JLabel();
+        LblNovoFuncionario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
@@ -41,30 +43,55 @@ public class MenuInicial extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159663\\Desktop\\novoFuncionario.png")); // NOI18N
+        LblNovoCardapio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/_08/pedido.png"))); // NOI18N
+        LblNovoCardapio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblNovoCardapioMouseClicked(evt);
+            }
+        });
+
+        LblNovoFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/_08/fornecedor.png"))); // NOI18N
+        LblNovoFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblNovoFornecedorMouseClicked(evt);
+            }
+        });
+
+        LblNovoFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/_08/funcionario.png"))); // NOI18N
+        LblNovoFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblNovoFuncionarioMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addComponent(LblNovoFuncionario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addComponent(LblNovoCardapio)
+                .addGap(118, 118, 118)
+                .addComponent(LblNovoFornecedor)
+                .addGap(73, 73, 73))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(211, 211, 211)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addGap(211, 211, 211)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(70, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(946, Short.MAX_VALUE))
+                .addGap(131, 131, 131)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LblNovoFornecedor)
+                    .addComponent(LblNovoFuncionario)
+                    .addComponent(LblNovoCardapio))
+                .addContainerGap(775, Short.MAX_VALUE))
         );
 
         pack();
@@ -74,6 +101,34 @@ public class MenuInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
       
     }//GEN-LAST:event_formWindowOpened
+
+    private void LblNovoFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblNovoFuncionarioMouseClicked
+        // TODO add your handling code here:
+        
+        NovoFuncionario criar = new NovoFuncionario();
+        
+        dispose();
+        
+        criar.setVisible(true);
+    }//GEN-LAST:event_LblNovoFuncionarioMouseClicked
+
+    private void LblNovoFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblNovoFornecedorMouseClicked
+        // TODO add your handling code here:
+        NovoFornecedor criar = new NovoFornecedor();
+        
+        dispose();
+        
+        criar.setVisible(true);
+    }//GEN-LAST:event_LblNovoFornecedorMouseClicked
+
+    private void LblNovoCardapioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblNovoCardapioMouseClicked
+        // TODO add your handling code here:
+        NovoCardapio criar = new NovoCardapio();
+        
+        dispose();
+        
+        criar.setVisible(true);
+    }//GEN-LAST:event_LblNovoCardapioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -116,6 +171,8 @@ public class MenuInicial extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -128,7 +185,9 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LblNovoCardapio;
+    private javax.swing.JLabel LblNovoFornecedor;
+    private javax.swing.JLabel LblNovoFuncionario;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
