@@ -203,7 +203,44 @@ public class Conectar {
         }
     }
     
+    public void novoInsumo(Connection con, String nome, int preco, int quantidade){
+        try{
+            
+            String sql = "INSERT IGNORE INTO Insumos VALUES (null, ?,?,?);";
+            
+            PreparedStatement pstm = con.prepareStatement(sql);
+            
+            
+            pstm.setString(1, nome);
+            pstm.setInt(2, preco);
+            pstm.setInt(3, quantidade);
+            
+            
+            
+            pstm.execute();
+            
+        }catch(Exception e){
+            System.out.println("Erro ao inserir!" + e);
+        }
     
+    }
+    
+    public void consultaInsumo(Connection con) {
+        try {
+            Statement stml = con.createStatement();
+            ResultSet rs = stml.executeQuery("select * from Insumos");
+            while (rs.next()){
+                System.out.println(
+                        "\n   ID:" + rs.getInt(1) +
+                        "\n   Nome:" + rs.getString(2) +
+                        "\n   Produto:" + rs.getInt(3) +
+                        "\n   Quantidade:" + rs.getInt(4)      
+                );
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
     
 }
