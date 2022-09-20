@@ -211,6 +211,38 @@ public class FazerPedido extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
+        DefaultTableModel tblModel = (DefaultTableModel) TblCardapio.getModel();
+
+        Conectar obj = new Conectar();
+
+        Connection conexao = obj.connectionMySql();
+
+        try {
+
+            PreparedStatement stml = conexao.prepareStatement("select * from Cardapio");
+            ResultSet rs = stml.executeQuery();
+
+            //Statement stml = conexao.createStatement();
+            //ResultSet rs = stml.executeQuery("select Nome_Comida from Cardapio");
+            ArrayList<String> cardapio = new ArrayList<>();
+
+            while (rs.next()) {
+
+
+                System.out.println(cardapio);
+
+                String coluna0 = Integer.toString(rs.getInt(1));
+                String coluna1 = rs.getString(2);
+
+                tblModel.addRow(new String[]{coluna0, coluna1});
+
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        obj.consultaCardapio(conexao);
 
     }//GEN-LAST:event_formWindowOpened
 
@@ -304,38 +336,6 @@ public class FazerPedido extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-
-                //DefaultTableModel tblModel = (DefaultTableModel) TblCardapio.getModel();
-                Conectar obj = new Conectar();
-
-                Connection conexao = obj.connectionMySql();
-                
-                
-                String header[] = new String[]{"Titulo 1", "Titulo 2", "Titulo 3"};
-                DefaultTableModel model = new DefaultTableModel (header, 0);
-                model.setNumRows(0);
-
-                try {
-
-                    PreparedStatement stml = conexao.prepareStatement("select Nome_Comida from Cardapio");
-                    ResultSet rs = stml.executeQuery();
-
-                    //Statement stml = conexao.createStatement();
-                    //ResultSet rs = stml.executeQuery("select Nome_Comida from Cardapio");
-                    ArrayList<String> cardapio = new ArrayList<>();
-
-                    while (rs.next()) {
-
-                        cardapio.add(rs.getString(1));
-
-                        System.out.println(cardapio);
-
-                    }
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-
-                obj.consultaCardapio(conexao);
 
                 new FazerPedido().setVisible(true);
 
