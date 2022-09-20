@@ -31,9 +31,9 @@ public class MenuInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        LblNovoCardapio = new javax.swing.JLabel();
-        LblNovoFornecedor = new javax.swing.JLabel();
         LblNovoFuncionario = new javax.swing.JLabel();
+        LblNovoFornecedor = new javax.swing.JLabel();
+        LblNovoCardapio = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
@@ -43,24 +43,24 @@ public class MenuInicial extends javax.swing.JFrame {
             }
         });
 
-        LblNovoCardapio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/_08/pedido.png"))); // NOI18N
-        LblNovoCardapio.addMouseListener(new java.awt.event.MouseAdapter() {
+        LblNovoFuncionario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\Java\\KAREN\\src\\main\\java\\com\\mycompany\\_08\\funcionario.png")); // NOI18N
+        LblNovoFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LblNovoCardapioMouseClicked(evt);
+                LblNovoFuncionarioMouseClicked(evt);
             }
         });
 
-        LblNovoFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/_08/fornecedor.png"))); // NOI18N
+        LblNovoFornecedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\Java\\KAREN\\src\\main\\java\\com\\mycompany\\_08\\fornecedor.png")); // NOI18N
         LblNovoFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblNovoFornecedorMouseClicked(evt);
             }
         });
 
-        LblNovoFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/_08/funcionario.png"))); // NOI18N
-        LblNovoFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+        LblNovoCardapio.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\Java\\KAREN\\src\\main\\java\\com\\mycompany\\_08\\pedido.png")); // NOI18N
+        LblNovoCardapio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LblNovoFuncionarioMouseClicked(evt);
+                LblNovoCardapioMouseClicked(evt);
             }
         });
 
@@ -68,30 +68,32 @@ public class MenuInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(LblNovoFuncionario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                .addComponent(LblNovoCardapio)
-                .addGap(118, 118, 118)
-                .addComponent(LblNovoFornecedor)
-                .addGap(73, 73, 73))
             .addGroup(layout.createSequentialGroup()
-                .addGap(211, 211, 211)
+                .addGap(44, 44, 44)
+                .addComponent(LblNovoFuncionario)
+                .addGap(93, 93, 93)
+                .addComponent(LblNovoFornecedor)
+                .addGap(65, 65, 65)
+                .addComponent(LblNovoCardapio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(131, 131, 131)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(LblNovoFornecedor)
-                    .addComponent(LblNovoFuncionario)
-                    .addComponent(LblNovoCardapio))
-                .addContainerGap(775, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(95, 95, 95))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LblNovoCardapio, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LblNovoFornecedor, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(LblNovoFuncionario)))
+                        .addGap(40, 40, 40))))
         );
 
         pack();
@@ -110,6 +112,7 @@ public class MenuInicial extends javax.swing.JFrame {
         dispose();
         
         criar.setVisible(true);
+        
     }//GEN-LAST:event_LblNovoFuncionarioMouseClicked
 
     private void LblNovoFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblNovoFornecedorMouseClicked
