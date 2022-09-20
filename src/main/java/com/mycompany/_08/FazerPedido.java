@@ -1,9 +1,9 @@
-
 package com.mycompany._08;
 
 import java.awt.Color;
 import java.awt.List;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -14,15 +14,15 @@ import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.Objects;
 
-
 public class FazerPedido extends javax.swing.JFrame {
+
+    ResultSet rs;
 
     public FazerPedido() {
         initComponents();
         getContentPane().setBackground(Color.darkGray);
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -188,36 +188,32 @@ public class FazerPedido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         dispose();
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        
+
         Conectar obj = new Conectar();
-        
+
         Connection conexao = obj.connectionMySql();
-        
+
         String nome = TxtNome.getText();
         String tipo = (String) TxtTipo.getSelectedItem();
-        
-        
-        
+
         obj.consultaCardapio(conexao);
-        
+
         dispose();
-        
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-      
-       
+
+
     }//GEN-LAST:event_formWindowOpened
 
-   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -306,44 +302,43 @@ public class FazerPedido extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               
+
                 //DefaultTableModel tblModel = (DefaultTableModel) TblCardapio.getModel();
-                
                 Conectar obj = new Conectar();
-        
+
                 Connection conexao = obj.connectionMySql();
                 
                 
-                
+                String header[] = new String[]{"Titulo 1", "Titulo 2", "Titulo 3"};
+                DefaultTableModel model = new DefaultTableModel (header, 0);
+                model.setNumRows(0);
+
                 try {
-                    Statement stml = conexao.createStatement();
-                    ResultSet rs = stml.executeQuery("select Nome_Comida from Cardapio");
-                    while (rs.next()){
-                        
-                        
-                        
-                                               
-                        
-                        
+
+                    PreparedStatement stml = conexao.prepareStatement("select Nome_Comida from Cardapio");
+                    ResultSet rs = stml.executeQuery();
+
+                    //Statement stml = conexao.createStatement();
+                    //ResultSet rs = stml.executeQuery("select Nome_Comida from Cardapio");
+                    ArrayList<String> cardapio = new ArrayList<>();
+
+                    while (rs.next()) {
+
+                        cardapio.add(rs.getString(1));
+
+                        System.out.println(cardapio);
+
                     }
                 } catch (Exception e) {
                     System.out.println(e);
                 }
 
-
-                
                 obj.consultaCardapio(conexao);
-                
-                
-                
-                
+
                 new FazerPedido().setVisible(true);
-                
-                
+
             }
         });
     }
