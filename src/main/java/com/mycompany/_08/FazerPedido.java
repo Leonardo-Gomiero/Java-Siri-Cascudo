@@ -209,8 +209,16 @@ public class FazerPedido extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    public void redimensionarColuna() {
 
+        TblCardapio.getColumnModel().getColumn(0)
+                .setPreferredWidth(20);
+        TblCardapio.getColumnModel().getColumn(1)
+                .setPreferredWidth(100);
+
+    }
+
+    private void carregarCardapio() {
         DefaultTableModel tblModel = (DefaultTableModel) TblCardapio.getModel();
 
         Conectar obj = new Conectar();
@@ -222,14 +230,7 @@ public class FazerPedido extends javax.swing.JFrame {
             PreparedStatement stml = conexao.prepareStatement("select * from Cardapio");
             ResultSet rs = stml.executeQuery();
 
-            //Statement stml = conexao.createStatement();
-            //ResultSet rs = stml.executeQuery("select Nome_Comida from Cardapio");
-            ArrayList<String> cardapio = new ArrayList<>();
-
             while (rs.next()) {
-
-
-                System.out.println(cardapio);
 
                 String coluna0 = Integer.toString(rs.getInt(1));
                 String coluna1 = rs.getString(2);
@@ -241,8 +242,12 @@ public class FazerPedido extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
 
-        obj.consultaCardapio(conexao);
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+
+        redimensionarColuna();
+        carregarCardapio();
 
     }//GEN-LAST:event_formWindowOpened
 
