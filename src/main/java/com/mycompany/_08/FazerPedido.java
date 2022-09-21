@@ -187,7 +187,33 @@ public class FazerPedido extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
+        
+        //Adicionando os itens ao campo de Itens
+        int linhasPedido = TblPedido.getRowCount();
+        
+        DefaultTableModel tblPedido = (DefaultTableModel) TblPedido.getModel();
+        
+        String itens = Integer.toString((Integer) tblPedido.getValueAt(0, 1)) + "x " +  (String) tblPedido.getValueAt(0, 0);
+        
+        for (int i =1; i < linhasPedido; i++){
+            itens += ", " + Integer.toString((Integer) tblPedido.getValueAt(i, 1)) + "x " + (String) tblPedido.getValueAt(i, 0);
+        }
+        //System.out.println(itens);
+        
+        
+        //Obtendo o valor total
+        double total = Double.parseDouble(LblTotal.getText());
+       
+        
+        
+        Conectar obj = new Conectar();
 
+        Connection conexao = obj.connectionMySql();
+        
+        obj.novoPedido(conexao, itens, total);
+        
+        obj.consultaPedidos(conexao);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public void redimensionarColuna() {
@@ -252,7 +278,7 @@ public class FazerPedido extends javax.swing.JFrame {
             double total = Double.parseDouble(LblTotal.getText());
             
             int quantidade = (int) SpnQuant.getValue();
-            System.out.println(quantidade);
+            //System.out.println(quantidade);
 
             int index = TblCardapio.getSelectedRow();
             Object[] row = new Object[3];
@@ -263,8 +289,6 @@ public class FazerPedido extends javax.swing.JFrame {
             row[0] = tblCardapio.getValueAt(index, 0);
             row[1] = quantidade;
             row[2] = tblCardapio.getValueAt(index, 2);
-
-            System.out.println(tblCardapio.getValueAt(index, 2).getClass().getName());
             
             double v1 = Double.valueOf((String) tblCardapio.getValueAt(index, 2));
             
