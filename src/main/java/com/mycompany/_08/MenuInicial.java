@@ -31,53 +31,71 @@ public class MenuInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        LblNovoFuncionario = new javax.swing.JLabel();
-        LblNovoFornecedor = new javax.swing.JLabel();
-        LblNovoCardapio = new javax.swing.JLabel();
-        BtnLogin = new javax.swing.JButton();
-        LblPedido = new javax.swing.JLabel();
+        LblNome = new javax.swing.JLabel();
+        LblNivel = new javax.swing.JLabel();
+        BtnFuncionario = new javax.swing.JButton();
+        BtnCardapio = new javax.swing.JButton();
+        BtnPedido = new javax.swing.JButton();
+        BtnFornecedor = new javax.swing.JButton();
+        BtnInsumo = new javax.swing.JButton();
+        BtnDelivery = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
 
-        LblNovoFuncionario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\Java\\KAREN\\src\\main\\java\\com\\mycompany\\_08\\funcionario.png")); // NOI18N
-        LblNovoFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LblNovoFuncionarioMouseClicked(evt);
-            }
-        });
+        LblNome.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        LblNome.setText("Nome");
 
-        LblNovoFornecedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\Java\\KAREN\\src\\main\\java\\com\\mycompany\\_08\\fornecedor.png")); // NOI18N
-        LblNovoFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LblNovoFornecedorMouseClicked(evt);
-            }
-        });
+        LblNivel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        LblNivel.setText("3");
 
-        LblNovoCardapio.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\Java\\KAREN\\src\\main\\java\\com\\mycompany\\_08\\pedido.png")); // NOI18N
-        LblNovoCardapio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LblNovoCardapioMouseClicked(evt);
-            }
-        });
-
-        BtnLogin.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        BtnLogin.setText("Login");
-        BtnLogin.addActionListener(new java.awt.event.ActionListener() {
+        BtnFuncionario.setText("Gerenciar Funcionários");
+        BtnFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnLoginActionPerformed(evt);
+                BtnFuncionarioActionPerformed(evt);
             }
         });
 
-        LblPedido.setText("jLabel1");
-        LblPedido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LblPedidoMouseClicked(evt);
+        BtnCardapio.setText("Novo Item Cardápio");
+        BtnCardapio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCardapioActionPerformed(evt);
+            }
+        });
+
+        BtnPedido.setText("Fazer Pedido");
+        BtnPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPedidoActionPerformed(evt);
+            }
+        });
+
+        BtnFornecedor.setText("Novo Fornecedor");
+        BtnFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnFornecedorActionPerformed(evt);
+            }
+        });
+
+        BtnInsumo.setText("Novo Insumo");
+        BtnInsumo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnInsumoActionPerformed(evt);
+            }
+        });
+
+        BtnDelivery.setText("Novo Delivery");
+        BtnDelivery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDeliveryActionPerformed(evt);
             }
         });
 
@@ -86,45 +104,57 @@ public class MenuInicial extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(LblNovoFuncionario)
-                .addGap(79, 79, 79)
-                .addComponent(LblNovoFornecedor)
-                .addGap(53, 53, 53)
-                .addComponent(LblNovoCardapio)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
+                        .addGap(827, 827, 827)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(LblPedido)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(BtnPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(BtnCardapio, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                                    .addComponent(BtnInsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addComponent(LblNome)))
+                        .addGap(205, 205, 205)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BtnDelivery, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnFuncionario)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(66, 66, 66)
+                                .addComponent(LblNivel)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnLogin)
-                .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblNovoFornecedor)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LblNovoCardapio)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(61, 61, 61)
-                                        .addComponent(LblPedido)))
-                                .addGap(47, 47, 47)
-                                .addComponent(BtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(LblNovoFuncionario))
-                .addGap(20, 20, 20))
+                        .addGap(25, 25, 25)
+                        .addComponent(LblNivel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(LblNome)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnDelivery)
+                    .addComponent(BtnInsumo))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnFornecedor)
+                    .addComponent(BtnPedido))
+                .addGap(9, 9, 9)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnCardapio)
+                    .addComponent(BtnFuncionario))
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -135,43 +165,59 @@ public class MenuInicial extends javax.swing.JFrame {
       
     }//GEN-LAST:event_formWindowOpened
 
-    private void LblNovoFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblNovoFuncionarioMouseClicked
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
+        String Nivel = LblNivel.getText();
         
-        NovoFuncionario criar = new NovoFuncionario();
-        
-        criar.setVisible(true);
-        
-    }//GEN-LAST:event_LblNovoFuncionarioMouseClicked
+        if(Nivel.equals("1")){
+            BtnFuncionario.setEnabled(false);
+            BtnFornecedor.setEnabled(false);
+            BtnDelivery.setEnabled(false);
+        }
+    }//GEN-LAST:event_formWindowActivated
 
-    private void LblNovoFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblNovoFornecedorMouseClicked
-        // TODO add your handling code here:
-        NovoFornecedor criar = new NovoFornecedor();
-        
-        criar.setVisible(true);
-    }//GEN-LAST:event_LblNovoFornecedorMouseClicked
+    private void BtnInsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInsumoActionPerformed
+        // TODO add your handling code here
+        NovoInsumo janInsumo = new NovoInsumo();
 
-    private void LblNovoCardapioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblNovoCardapioMouseClicked
-        // TODO add your handling code here:
-        NovoCardapio criar = new NovoCardapio();
+        janInsumo.setVisible(true);
         
-        
-        criar.setVisible(true);
-    }//GEN-LAST:event_LblNovoCardapioMouseClicked
+    }//GEN-LAST:event_BtnInsumoActionPerformed
 
-    private void BtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLoginActionPerformed
+    private void BtnPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPedidoActionPerformed
         // TODO add your handling code here:
-        FazerPedido criar = new FazerPedido();
-        
-        criar.setVisible(true);
-    }//GEN-LAST:event_BtnLoginActionPerformed
+        FazerPedido janPedido = new FazerPedido();
 
-    private void LblPedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPedidoMouseClicked
+        janPedido.setVisible(true);
+    }//GEN-LAST:event_BtnPedidoActionPerformed
+
+    private void BtnCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCardapioActionPerformed
         // TODO add your handling code here:
-        FazerPedido criar = new FazerPedido();
+        NovoCardapio janCardapio = new NovoCardapio();
+
+        janCardapio.setVisible(true);
+    }//GEN-LAST:event_BtnCardapioActionPerformed
+
+    private void BtnDeliveryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDeliveryActionPerformed
+        // TODO add your handling code here:
+        NovoDelivery janDelivery = new NovoDelivery();
+
+        janDelivery.setVisible(true);
+    }//GEN-LAST:event_BtnDeliveryActionPerformed
+
+    private void BtnFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFornecedorActionPerformed
+        // TODO add your handling code here:
+        NovoFornecedor janFornecedor = new NovoFornecedor();
+
+        janFornecedor.setVisible(true);
+    }//GEN-LAST:event_BtnFornecedorActionPerformed
+
+    private void BtnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFuncionarioActionPerformed
+        // TODO add your handling code here:
+        MenuAdm janAdm = new MenuAdm();
         
-        criar.setVisible(true);
-    }//GEN-LAST:event_LblPedidoMouseClicked
+        janAdm.setVisible(true);
+    }//GEN-LAST:event_BtnFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,11 +274,14 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnLogin;
-    private javax.swing.JLabel LblNovoCardapio;
-    private javax.swing.JLabel LblNovoFornecedor;
-    private javax.swing.JLabel LblNovoFuncionario;
-    private javax.swing.JLabel LblPedido;
+    private javax.swing.JButton BtnCardapio;
+    private javax.swing.JButton BtnDelivery;
+    private javax.swing.JButton BtnFornecedor;
+    private javax.swing.JButton BtnFuncionario;
+    private javax.swing.JButton BtnInsumo;
+    private javax.swing.JButton BtnPedido;
+    public javax.swing.JLabel LblNivel;
+    public javax.swing.JLabel LblNome;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

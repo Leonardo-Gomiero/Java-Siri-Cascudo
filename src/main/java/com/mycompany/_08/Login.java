@@ -6,6 +6,13 @@ package com.mycompany._08;
 
 import java.awt.Color;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,12 +37,13 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jProgressBar1 = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
         TxtCPF = new javax.swing.JTextField();
         LblCadastrar = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtnEntrar = new javax.swing.JButton();
         TxtSenha = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -85,12 +93,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jButton2.setText("Entrar");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtnEntrar.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        BtnEntrar.setText("Entrar");
+        BtnEntrar.setToolTipText("");
+        BtnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtnEntrarActionPerformed(evt);
             }
         });
 
@@ -140,7 +148,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(LblAviso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(TxtCPF)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BtnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(71, 71, 71)
                                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
                             .addComponent(TxtSenha)
@@ -173,7 +181,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(LblAviso)
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(BtnEntrar)
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -192,58 +200,73 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
         // TODO add your handling code here:
         Conectar obj = new Conectar();
-        
+
         Connection conexao = obj.connectionMySql();
-        
+
         long cpf = Long.parseLong(TxtCPF.getText());
-        
+
         String senha2 = "";
         char[] senha = TxtSenha.getPassword();
         senha2 = new String(senha);
-        
-        
-        
-        
-        
+
         boolean status_login = obj.realizarLogin(conexao, cpf, senha2);
-        
-        if(status_login){
-            
+
+        String nome = "";
+        int nivel = 1;
+
+        if (status_login) {
+
             MenuInicial criar = new MenuInicial();
-        
+            try {
+                Statement stml = conexao.createStatement();
+                ResultSet rs = stml.executeQuery("SELECT Nome_fun, Nivel from Funcionarios WHERE CPF= " + cpf + ";");
+
+                while (rs.next()) {
+                    nome = rs.getString(1);
+                    nivel = rs.getInt(2);
+                }
+
+                System.out.println(nome);
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
             dispose();
 
             criar.setVisible(true);
-        }else{
+            criar.LblNome.setText(nome);
+            criar.LblNivel.setText(Integer.toString(nivel));
+            
+        } else {
             LblAviso.setVisible(true);
         }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+
+    }//GEN-LAST:event_BtnEntrarActionPerformed
 
     private void LblCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblCadastrarMouseClicked
         // TODO add your handling code here:
-        
-        
+
         NovoFuncionario criar = new NovoFuncionario();
-        
+
         dispose();
-        
+
         criar.setVisible(true);
-        
+
     }//GEN-LAST:event_LblCadastrarMouseClicked
 
     private void CheckSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckSenhaActionPerformed
         // TODO add your handling code here:
-        if (CheckSenha.isSelected()){
-            TxtSenha.setEchoChar((char)0);
+        if (CheckSenha.isSelected()) {
+            TxtSenha.setEchoChar((char) 0);
 
-        }else {
+        } else {
             TxtSenha.setEchoChar('*');
 
         }
@@ -261,7 +284,7 @@ public class Login extends javax.swing.JFrame {
 
     private void LblCadastrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblCadastrarMouseEntered
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_LblCadastrarMouseEntered
 
     /**
@@ -301,16 +324,17 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnEntrar;
     private javax.swing.JCheckBox CheckSenha;
     private javax.swing.JLabel LblAviso;
     private javax.swing.JLabel LblCadastrar;
     private javax.swing.JTextField TxtCPF;
     private javax.swing.JPasswordField TxtSenha;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
