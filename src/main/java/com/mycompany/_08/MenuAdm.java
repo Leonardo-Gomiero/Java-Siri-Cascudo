@@ -34,11 +34,8 @@ public class MenuAdm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         BtnFinalizar = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        TblPedido = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         TblFuncionario = new javax.swing.JTable();
-        SpnQuant = new javax.swing.JSpinner();
         BtnAlterar = new javax.swing.JButton();
         BtnExcluir = new javax.swing.JButton();
         LblTotal1 = new javax.swing.JLabel();
@@ -76,16 +73,6 @@ public class MenuAdm extends javax.swing.JFrame {
                 BtnFinalizarActionPerformed(evt);
             }
         });
-
-        TblPedido.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome", "Quantidade", "Valor (R$)"
-            }
-        ));
-        jScrollPane3.setViewportView(TblPedido);
 
         TblFuncionario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -142,38 +129,32 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
                         .addComponent(jLabel1)
-                        .addGap(197, 197, 197)
+                        .addGap(162, 162, 162)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(SpnQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BtnExcluir))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(LblTotal2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TxtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(122, 122, 122)
-                                        .addComponent(LblTotal1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(TxtCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(BtnFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(213, 213, 213)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(128, 128, 128)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(55, 55, 55))))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(LblTotal2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(TxtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(122, 122, 122)
+                                    .addComponent(LblTotal1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(TxtCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(BtnFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(213, 213, 213)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(435, 435, 435)
+                                    .addComponent(BtnExcluir))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,15 +164,12 @@ public class MenuAdm extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BtnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SpnQuant)
-                    .addComponent(BtnAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnExcluir)
+                    .addComponent(BtnAlterar))
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LblTotal2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -216,59 +194,16 @@ public class MenuAdm extends javax.swing.JFrame {
 
     private void BtnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFinalizarActionPerformed
 
-        //Adicionando os itens ao campo de Itens
-        int linhasPedido = TblPedido.getRowCount();
-
-        DefaultTableModel tblPedido = (DefaultTableModel) TblPedido.getModel();
-
-        String itens = Integer.toString((Integer) tblPedido.getValueAt(0, 1)) + "x " + (String) tblPedido.getValueAt(0, 0);
-
-        for (int i = 1; i < linhasPedido; i++) {
-            itens += ", " + Integer.toString((Integer) tblPedido.getValueAt(i, 1)) + "x " + (String) tblPedido.getValueAt(i, 0);
-        }
-        //System.out.println(itens);
-
-        //Obtendo o valor total
         //Inserir no banco de dados o novo pedido
-        Conectar obj = new Conectar();
-
-        Connection conexao = obj.connectionMySql();
-
-        obj.consultaPedidos(conexao);
-
-        String nome = TxtValor.getText();
-
-        PedidoSendoFeito criar = new PedidoSendoFeito();
-
-        criar.LblNome.setText(nome);
-
         dispose();
 
-        criar.setVisible(true);
-
-
     }//GEN-LAST:event_BtnFinalizarActionPerformed
-
-    public void redimensionarColuna() {
-
-        /*
-        TblFuncionario.getColumnModel().getColumn(0)
-                .setPreferredWidth(200);
-        TblFuncionario.getColumnModel().getColumn(1)
-                .setPreferredWidth(20);
-         */
-        TblPedido.getColumnModel().getColumn(0)
-                .setPreferredWidth(150);
-        TblPedido.getColumnModel().getColumn(1)
-                .setPreferredWidth(50);
-
-    }
 
     private void carregarFuncionarios() {
         DefaultTableModel tblFuncionario = (DefaultTableModel) TblFuncionario.getModel();
 
         tblFuncionario.setRowCount(0);
-        
+
         Conectar obj = new Conectar();
 
         Connection conexao = obj.connectionMySql();
@@ -310,10 +245,6 @@ public class MenuAdm extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
-        DefaultTableModel tblPedido = (DefaultTableModel) TblPedido.getModel();
-
-        redimensionarColuna();
-
         carregarFuncionarios();
 
     }//GEN-LAST:event_formWindowOpened
@@ -321,10 +252,9 @@ public class MenuAdm extends javax.swing.JFrame {
     public void alterarCampo(String Campo, String novoValor) throws SQLException {
 
         try {
-            
 
             System.out.println("\n\nFUNÇÃO\nCampo: " + Campo + "\nValor: " + novoValor);
-            
+
             //Obter a chave primária do registro a ser alterado
             int index = TblFuncionario.getSelectedRow();
             DefaultTableModel tblFuncionario = (DefaultTableModel) TblFuncionario.getModel();
@@ -346,7 +276,7 @@ public class MenuAdm extends javax.swing.JFrame {
                     pstm.setString(1, novoValor);
                     pstm.setLong(2, cpf);
                     pstm.execute();
-                    
+
                     break;
 
                 case "RG":
@@ -354,7 +284,7 @@ public class MenuAdm extends javax.swing.JFrame {
                     pstm.setString(1, novoValor);
                     pstm.setLong(2, cpf);
                     pstm.execute();
-                    
+
                     break;
 
                 case "Salário":
@@ -414,13 +344,36 @@ public class MenuAdm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BtnAlterarActionPerformed
 
-    private void BtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExcluirActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel tblPedido = (DefaultTableModel) TblPedido.getModel();
+    public void excluirRegistro() {
+        try {
 
-        if (TblPedido.getSelectedRowCount() == 1) {
-            tblPedido.removeRow(TblPedido.getSelectedRow());
+            //Obter a chave primária do registro a ser alterado
+            int index = TblFuncionario.getSelectedRow();
+            DefaultTableModel tblFuncionario = (DefaultTableModel) TblFuncionario.getModel();
+            String CPF = (String) tblFuncionario.getValueAt(index, 0);
+            long cpf = Long.parseLong(CPF);
+            System.out.println("CPF selecionado: " + cpf);
+
+            //Preparar a conexão com o MySQL
+            Conectar obj = new Conectar();
+            Connection conexao = obj.connectionMySql();
+
+            //Executar a query de atualizar o devido registro
+            PreparedStatement pstm = conexao.prepareStatement("DELETE FROM Funcionarios WHERE CPF= ?;");
+            pstm.setLong(1, cpf);
+            pstm.execute();
+
+        } catch (Exception e) {
+            System.out.println("Erro!\nO erro em questão se trata de: " + e);
         }
+    }
+
+    private void BtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExcluirActionPerformed
+        // TODO add your handling code here
+        
+        excluirRegistro();
+        carregarFuncionarios();
+
     }//GEN-LAST:event_BtnExcluirActionPerformed
 
     private void TxtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtValorActionPerformed
@@ -598,15 +551,12 @@ public class MenuAdm extends javax.swing.JFrame {
     private javax.swing.JButton BtnFinalizar;
     private javax.swing.JLabel LblTotal1;
     private javax.swing.JLabel LblTotal2;
-    private javax.swing.JSpinner SpnQuant;
     public javax.swing.JTable TblFuncionario;
-    private javax.swing.JTable TblPedido;
     private javax.swing.JComboBox<String> TxtCampo;
     private javax.swing.JTextField TxtValor;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
 }
