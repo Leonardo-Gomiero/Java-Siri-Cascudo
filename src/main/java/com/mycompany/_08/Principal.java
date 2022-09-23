@@ -13,13 +13,9 @@ import java.sql.*;
 public class Principal {
     public static void main(String[] args) {
         
-        Conectar obj = new Conectar();
+        Login iniciar = new Login();
         
-        Connection conexao = obj.connectionMySql();
-        
-        obj.closeConnectionMySql(conexao);
-        
-        
+        iniciar.setVisible(true);        
         
     }
 }

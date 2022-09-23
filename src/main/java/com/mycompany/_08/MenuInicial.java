@@ -34,6 +34,8 @@ public class MenuInicial extends javax.swing.JFrame {
         LblNovoFuncionario = new javax.swing.JLabel();
         LblNovoFornecedor = new javax.swing.JLabel();
         LblNovoCardapio = new javax.swing.JLabel();
+        BtnLogin = new javax.swing.JButton();
+        LblPedido = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
@@ -64,36 +66,65 @@ public class MenuInicial extends javax.swing.JFrame {
             }
         });
 
+        BtnLogin.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        BtnLogin.setText("Login");
+        BtnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLoginActionPerformed(evt);
+            }
+        });
+
+        LblPedido.setText("jLabel1");
+        LblPedido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblPedidoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(84, 84, 84)
                 .addComponent(LblNovoFuncionario)
-                .addGap(93, 93, 93)
+                .addGap(79, 79, 79)
                 .addComponent(LblNovoFornecedor)
-                .addGap(65, 65, 65)
+                .addGap(53, 53, 53)
                 .addComponent(LblNovoCardapio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(LblPedido)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnLogin)
+                .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(95, 95, 95))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblNovoCardapio, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(LblNovoFornecedor, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(LblNovoFuncionario)))
-                        .addGap(40, 40, 40))))
+                            .addComponent(LblNovoFornecedor)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblNovoCardapio)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(61, 61, 61)
+                                        .addComponent(LblPedido)))
+                                .addGap(47, 47, 47)
+                                .addComponent(BtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(LblNovoFuncionario))
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -109,8 +140,6 @@ public class MenuInicial extends javax.swing.JFrame {
         
         NovoFuncionario criar = new NovoFuncionario();
         
-        dispose();
-        
         criar.setVisible(true);
         
     }//GEN-LAST:event_LblNovoFuncionarioMouseClicked
@@ -119,8 +148,6 @@ public class MenuInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         NovoFornecedor criar = new NovoFornecedor();
         
-        dispose();
-        
         criar.setVisible(true);
     }//GEN-LAST:event_LblNovoFornecedorMouseClicked
 
@@ -128,10 +155,23 @@ public class MenuInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         NovoCardapio criar = new NovoCardapio();
         
-        dispose();
         
         criar.setVisible(true);
     }//GEN-LAST:event_LblNovoCardapioMouseClicked
+
+    private void BtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLoginActionPerformed
+        // TODO add your handling code here:
+        FazerPedido criar = new FazerPedido();
+        
+        criar.setVisible(true);
+    }//GEN-LAST:event_BtnLoginActionPerformed
+
+    private void LblPedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPedidoMouseClicked
+        // TODO add your handling code here:
+        FazerPedido criar = new FazerPedido();
+        
+        criar.setVisible(true);
+    }//GEN-LAST:event_LblPedidoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -188,9 +228,11 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnLogin;
     private javax.swing.JLabel LblNovoCardapio;
     private javax.swing.JLabel LblNovoFornecedor;
     private javax.swing.JLabel LblNovoFuncionario;
+    private javax.swing.JLabel LblPedido;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
