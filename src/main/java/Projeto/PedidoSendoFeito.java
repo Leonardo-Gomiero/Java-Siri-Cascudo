@@ -1,4 +1,4 @@
-package MenuResponsivo;
+package Projeto;
 
 import java.awt.Color;
 import java.awt.List;

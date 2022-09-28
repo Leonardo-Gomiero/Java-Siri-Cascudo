@@ -1,5 +1,5 @@
 
-package MenuResponsivo;
+package Projeto;
 
 import java.sql.*;
 import javax.swing.JOptionPane;

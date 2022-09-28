@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package MenuResponsivo;
+package Projeto;
 
 import java.awt.Color;
 import java.sql.Connection;
@@ -42,7 +42,9 @@ public class Carregar extends javax.swing.JFrame {
         PanLogin = new javax.swing.JPanel();
         BarraCarrregando = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        LblCAREN = new javax.swing.JLabel();
+        LblProcesso = new javax.swing.JLabel();
+        LblProgresso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
@@ -62,16 +64,28 @@ public class Carregar extends javax.swing.JFrame {
         PanLogin.setBackground(new java.awt.Color(0, 0, 0));
 
         BarraCarrregando.setForeground(new java.awt.Color(102, 255, 102));
+        BarraCarrregando.setToolTipText("");
+        BarraCarrregando.setName(""); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Computer Assistent Remote Embedded Network");
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("C.A.R.E.N.");
+        LblCAREN.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        LblCAREN.setForeground(new java.awt.Color(255, 255, 255));
+        LblCAREN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblCAREN.setText("C.A.R.E.N.");
+
+        LblProcesso.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        LblProcesso.setForeground(new java.awt.Color(255, 255, 255));
+        LblProcesso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblProcesso.setText("Processo");
+
+        LblProgresso.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        LblProgresso.setForeground(new java.awt.Color(255, 255, 255));
+        LblProgresso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblProgresso.setText("0%");
 
         javax.swing.GroupLayout PanLoginLayout = new javax.swing.GroupLayout(PanLogin);
         PanLogin.setLayout(PanLoginLayout);
@@ -80,24 +94,33 @@ public class Carregar extends javax.swing.JFrame {
             .addGroup(PanLoginLayout.createSequentialGroup()
                 .addGroup(PanLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanLoginLayout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(BarraCarrregando, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanLoginLayout.createSequentialGroup()
                         .addGap(219, 219, 219)
-                        .addComponent(jLabel2))
+                        .addComponent(LblCAREN))
                     .addGroup(PanLoginLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(PanLoginLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addGroup(PanLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BarraCarrregando, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PanLoginLayout.createSequentialGroup()
+                                .addComponent(LblProcesso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(LblProgresso)))))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
         PanLoginLayout.setVerticalGroup(
             PanLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanLoginLayout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addContainerGap(101, Short.MAX_VALUE)
+                .addComponent(LblCAREN)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(71, 71, 71)
+                .addGap(37, 37, 37)
+                .addGroup(PanLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblProcesso)
+                    .addComponent(LblProgresso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BarraCarrregando, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(104, 104, 104))
         );
@@ -173,10 +196,12 @@ public class Carregar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JProgressBar BarraCarrregando;
+    private javax.swing.JLabel LblCAREN;
+    public javax.swing.JLabel LblProcesso;
+    public javax.swing.JLabel LblProgresso;
     private javax.swing.JPanel PanLogin;
     private javax.swing.JLayeredPane PaneEntrar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }

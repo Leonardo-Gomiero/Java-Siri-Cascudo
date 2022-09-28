@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package MenuResponsivo;
+package Projeto;
 
 import java.awt.Color;
 import java.sql.Connection;
@@ -34,6 +34,24 @@ public class Entrar extends javax.swing.JFrame {
         
         try{
             for(int i = 0; i <= 100; i++){
+                JanCarregar.LblProgresso.setText(i + "%");
+                if(i == 10){
+                   JanCarregar.LblProcesso.setText("Ligando módulos...");
+                   
+                }else if(i == 20){
+                   JanCarregar.LblProcesso.setText("Carregando módulos...");
+                   
+                }else if(i == 50){
+                   JanCarregar.LblProcesso.setText("Conectando ao banco de dados...");
+                   
+                }else if(i == 70){
+                   JanCarregar.LblProcesso.setText("Conexão concluída...");
+                   
+                }else if(i == 80){
+                   JanCarregar.LblProcesso.setText("Lançando aplicação...");
+                   
+                }
+                
                 Thread.sleep(20);
                 JanCarregar.BarraCarrregando.setValue(i);
             }
@@ -94,7 +112,6 @@ public class Entrar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
-        setPreferredSize(new java.awt.Dimension(670, 470));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
