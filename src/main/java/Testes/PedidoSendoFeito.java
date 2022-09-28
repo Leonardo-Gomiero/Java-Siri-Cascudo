@@ -1,4 +1,4 @@
-package Funcionamento;
+package Testes;
 
 import java.awt.Color;
 import java.awt.List;

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Funcionamento;
+package MenuResponsivo;
 
 import java.awt.Color;
 import java.sql.Connection;
@@ -14,13 +14,11 @@ import javax.swing.JOptionPane;
  */
 public class NovoFuncionario extends javax.swing.JFrame {
 
-    
     public NovoFuncionario() {
         initComponents();
         getContentPane().setBackground(Color.darkGray);
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -291,7 +289,6 @@ public class NovoFuncionario extends javax.swing.JFrame {
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(TxtCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -336,62 +333,51 @@ public class NovoFuncionario extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        
-        
+
         Conectar obj = new Conectar();
-        
+
         String senha2 = "";
         long cep = 0;
-        
+
         Connection conexao = obj.connectionMySql();
-        
+
         long cpf = 0;
         String nome = "";
         String rg = "";
         float salario = (int) TxtSalario.getValue();   //Por padrao, sera 10
         char[] senha = TxtSenha1.getPassword();
         senha2 = new String(senha);
-        
+
         cpf = Long.parseLong(TxtCPF.getText());
         nome = TxtLogin.getText();
-        rg =  TxtRG.getText();
-        
-        
-        if(!TxtCEP.getText().equals("")){
+        rg = TxtRG.getText();
+
+        if (!TxtCEP.getText().equals("")) {
             cep = Long.parseLong(TxtCEP.getText());
         }
-        
-        
-       
-        
-        try{
+
+        try {
 
             //Connection con, long CPF, String Nome, String RG, float Salario, long CEP, String Senha, int Nivel
-            
-            obj.novoFuncionario(conexao, cpf, nome, rg,  salario, cep, senha2, 1);
+            obj.novoFuncionario(conexao, cpf, nome, rg, salario, cep, senha2, 1);
+
+            obj.consultaFuncionario(conexao);
             obj.closeConnectionMySql(conexao);
 
             JOptionPane.showMessageDialog(null, "O cadastro de " + nome + " foi efetuado.");
-            
+
             dispose();
 
-                
-            
-        }
-         catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro!!" + e);
             return;
         }
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void TxtCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCEPActionPerformed
@@ -404,45 +390,43 @@ public class NovoFuncionario extends javax.swing.JFrame {
 
     private void TxtSenha2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSenha2KeyTyped
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_TxtSenha2KeyTyped
 
     private void TxtSenha1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSenha1KeyReleased
         // TODO add your handling code here:
         String txt1, txt2;
-        
+
         txt1 = TxtSenha1.getText();
         txt2 = TxtSenha2.getText();
-        
-        if(txt1.equals(txt2)){
+
+        if (txt1.equals(txt2)) {
             LblSenha.setVisible(false);
-        }
-        else{
+        } else {
             LblSenha.setVisible(true);
         }
     }//GEN-LAST:event_TxtSenha1KeyReleased
 
     private void TxtSenha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSenha2ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_TxtSenha2ActionPerformed
 
     private void TxtSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSenha1ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_TxtSenha1ActionPerformed
 
     private void TxtSenha2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSenha2KeyReleased
         // TODO add your handling code here:
         String txt1, txt2;
-        
+
         txt1 = TxtSenha1.getText();
         txt2 = TxtSenha2.getText();
-        
-        if(txt1.equals(txt2)){
+
+        if (txt1.equals(txt2)) {
             LblSenha.setVisible(false);
-        }
-        else{
+        } else {
             LblSenha.setVisible(true);
         }
     }//GEN-LAST:event_TxtSenha2KeyReleased
@@ -454,16 +438,16 @@ public class NovoFuncionario extends javax.swing.JFrame {
 
     private void CheckSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckSenhaActionPerformed
         // TODO add your handling code here:
-        if (CheckSenha.isSelected()){
-            TxtSenha1.setEchoChar((char)0);
-            TxtSenha2.setEchoChar((char)0);
-            
-        }else {
+        if (CheckSenha.isSelected()) {
+            TxtSenha1.setEchoChar((char) 0);
+            TxtSenha2.setEchoChar((char) 0);
+
+        } else {
             TxtSenha1.setEchoChar('*');
             TxtSenha2.setEchoChar('*');
-            
+
         }
-        
+
     }//GEN-LAST:event_CheckSenhaActionPerformed
 
     private void TxtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCPFActionPerformed
@@ -474,14 +458,12 @@ public class NovoFuncionario extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-      
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 new NovoFuncionario().setVisible(true);
-                
-                
-                
+
             }
         });
     }
