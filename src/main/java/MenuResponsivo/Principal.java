@@ -12,26 +12,8 @@ package MenuResponsivo;
 public class Principal {
 
     public static void main(String[] args) {
-        Carregar JanCarregar = new Carregar();
         
         Entrar JanLogin = new Entrar();
         
-        JanLogin.setVisible(false);
-        
-        JanCarregar.setVisible(true);
-        
-        try{
-            for(int i = 0; i <= 100; i++){
-                Thread.sleep(60);
-                JanCarregar.BarraCarrregando.setValue(i);
-            }
-        }
-        catch(Exception e){
-            System.out.println("Erro: " + e);
-        }
-        JanCarregar.dispose();
-        
-        
-        JanLogin.setVisible(true);
     }
 }

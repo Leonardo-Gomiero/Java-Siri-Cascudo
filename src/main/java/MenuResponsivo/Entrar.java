@@ -26,6 +26,26 @@ public class Entrar extends javax.swing.JFrame {
     public Entrar() {
         initComponents();
         getContentPane().setBackground(Color.darkGray);
+        
+        Carregar JanCarregar = new Carregar();
+        this.setVisible(false);
+        
+        JanCarregar.setVisible(true);
+        
+        try{
+            for(int i = 0; i <= 100; i++){
+                Thread.sleep(20);
+                JanCarregar.BarraCarrregando.setValue(i);
+            }
+        }
+        catch(Exception e){
+            System.out.println("Erro: " + e);
+        }
+        
+        JanCarregar.dispose();
+        
+        
+        this.setVisible(true);
     }
 
     /**

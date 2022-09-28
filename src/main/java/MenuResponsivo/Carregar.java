@@ -41,6 +41,8 @@ public class Carregar extends javax.swing.JFrame {
         PaneEntrar = new javax.swing.JLayeredPane();
         PanLogin = new javax.swing.JPanel();
         BarraCarrregando = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
@@ -57,23 +59,47 @@ public class Carregar extends javax.swing.JFrame {
 
         PaneEntrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanLogin.setBackground(new java.awt.Color(153, 255, 153));
+        PanLogin.setBackground(new java.awt.Color(0, 0, 0));
+
+        BarraCarrregando.setForeground(new java.awt.Color(102, 255, 102));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Computer Assistent Remote Embedded Network");
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("C.A.R.E.N.");
 
         javax.swing.GroupLayout PanLoginLayout = new javax.swing.GroupLayout(PanLogin);
         PanLogin.setLayout(PanLoginLayout);
         PanLoginLayout.setHorizontalGroup(
             PanLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanLoginLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(BarraCarrregando, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGroup(PanLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanLoginLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(BarraCarrregando, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanLoginLayout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(jLabel2))
+                    .addGroup(PanLoginLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel1)))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         PanLoginLayout.setVerticalGroup(
             PanLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanLoginLayout.createSequentialGroup()
-                .addContainerGap(235, Short.MAX_VALUE)
+                .addContainerGap(95, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(71, 71, 71)
                 .addComponent(BarraCarrregando, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137))
+                .addGap(104, 104, 104))
         );
 
         PaneEntrar.add(PanLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 680, 400));
@@ -90,8 +116,8 @@ public class Carregar extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-
         
+
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -140,6 +166,7 @@ public class Carregar extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Carregar().setVisible(true);
+                
             }
         });
     }
@@ -148,6 +175,8 @@ public class Carregar extends javax.swing.JFrame {
     public javax.swing.JProgressBar BarraCarrregando;
     private javax.swing.JPanel PanLogin;
     private javax.swing.JLayeredPane PaneEntrar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
