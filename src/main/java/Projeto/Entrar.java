@@ -75,7 +75,6 @@ public class Entrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jProgressBar1 = new javax.swing.JProgressBar();
         PaneEntrar = new javax.swing.JLayeredPane();
         PanCadastro = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -112,6 +111,7 @@ public class Entrar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
+        setPreferredSize(new java.awt.Dimension(640, 500));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -269,7 +269,7 @@ public class Entrar extends javax.swing.JFrame {
                             .addComponent(TxtSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                         .addGroup(PanCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(jLabel11)
@@ -320,18 +320,19 @@ public class Entrar extends javax.swing.JFrame {
                 .addGroup(PanCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(TxtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(LblSenha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3)
                     .addComponent(jButton2))
                 .addGap(92, 92, 92))
         );
 
-        PaneEntrar.add(PanCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        PaneEntrar.add(PanCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
 
         PanLogin.setBackground(new java.awt.Color(153, 255, 153));
+        PanLogin.setPreferredSize(new java.awt.Dimension(640, 500));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
@@ -435,7 +436,7 @@ public class Entrar extends javax.swing.JFrame {
                                 .addComponent(BtnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(78, 78, 78)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         PanLoginLayout.setVerticalGroup(
             PanLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -465,7 +466,7 @@ public class Entrar extends javax.swing.JFrame {
                 .addContainerGap(104, Short.MAX_VALUE))
         );
 
-        PaneEntrar.add(PanLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 680, 400));
+        PaneEntrar.add(PanLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 640, 400));
 
         getContentPane().add(PaneEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 390));
 
@@ -797,6 +798,5 @@ public class Entrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
