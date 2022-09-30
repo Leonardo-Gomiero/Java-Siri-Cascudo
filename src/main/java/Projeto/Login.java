@@ -108,6 +108,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        CheckSenha.setBackground(new java.awt.Color(154, 217, 205));
         CheckSenha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         CheckSenha.setForeground(new java.awt.Color(0, 0, 0));
         CheckSenha.setText("Mostrar senha.");

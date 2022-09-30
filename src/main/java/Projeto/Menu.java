@@ -220,6 +220,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         P1.setBackground(new java.awt.Color(154, 217, 205));
+        P1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                P1MouseClicked(evt);
+            }
+        });
 
         LblPedido.setFont(new java.awt.Font("Showcard Gothic", 0, 12)); // NOI18N
         LblPedido.setForeground(new java.awt.Color(0, 0, 0));
@@ -242,16 +247,16 @@ public class Menu extends javax.swing.JFrame {
         P1Layout.setHorizontalGroup(
             P1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(25, 25, 25)
                 .addComponent(LblPedido)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         P1Layout.setVerticalGroup(
             P1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(P1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P1Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(LblPedido)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(14, 14, 14))
         );
 
         P2.setBackground(new java.awt.Color(154, 217, 205));
@@ -283,10 +288,10 @@ public class Menu extends javax.swing.JFrame {
         );
         P2Layout.setVerticalGroup(
             P2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(P2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P2Layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(LblCardapio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         P3.setBackground(new java.awt.Color(154, 217, 205));
@@ -312,16 +317,16 @@ public class Menu extends javax.swing.JFrame {
         P3Layout.setHorizontalGroup(
             P3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P3Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(26, 26, 26)
                 .addComponent(LblInsumo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         P3Layout.setVerticalGroup(
             P3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(P3Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P3Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(LblInsumo)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(14, 14, 14))
         );
 
         P4.setBackground(new java.awt.Color(154, 217, 205));
@@ -346,16 +351,16 @@ public class Menu extends javax.swing.JFrame {
         P4Layout.setHorizontalGroup(
             P4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(23, 23, 23)
                 .addComponent(LblDelivery)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         P4Layout.setVerticalGroup(
             P4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(P4Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P4Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(LblDelivery)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         P5.setBackground(new java.awt.Color(154, 217, 205));
@@ -436,18 +441,16 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(P3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(P4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(P5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(P6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(P6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
+                .addContainerGap(86, Short.MAX_VALUE)
                 .addComponent(P1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(P2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(P3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(P4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1827,6 +1830,10 @@ public class Menu extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_formWindowActivated
+
+    private void P1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_P1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_P1MouseClicked
 
     /**
      * @param args the command line arguments
