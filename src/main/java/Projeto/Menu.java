@@ -989,7 +989,7 @@ public class Menu extends javax.swing.JFrame {
 
         TblMenu.addTab("tab4", M4);
 
-        jPanel20.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel20.setBackground(new java.awt.Color(172, 86, 6));
 
         BtnLimparFornecedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BtnLimparFornecedor.setText("Limpar");

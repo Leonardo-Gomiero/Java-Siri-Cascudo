@@ -55,7 +55,7 @@ public class PedidoSendoFeito extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(874, 0, 239, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel1.setBackground(new java.awt.Color(172, 86, 6));
         jPanel1.setPreferredSize(new java.awt.Dimension(670, 470));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -63,7 +63,7 @@ public class PedidoSendoFeito extends javax.swing.JFrame {
         LblStatus.setForeground(new java.awt.Color(255, 255, 255));
         LblStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblStatus.setText("Pedido em andamento");
-        jPanel1.add(LblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, -1));
+        jPanel1.add(LblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
 
         Lbl1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Lbl1.setForeground(new java.awt.Color(255, 255, 255));

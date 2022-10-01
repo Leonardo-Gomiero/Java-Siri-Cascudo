@@ -6,7 +6,10 @@ package Projeto;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
+import static java.awt.SystemColor.window;
 import java.awt.Toolkit;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,6 +17,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
@@ -26,12 +30,19 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    
+    
     public Login() {
         initComponents();
         
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
         setResizable(false);
+        
+        URL url = this.getClass().getResource("/Images/KAREN.png");
+        System.out.println(url);
+        //Image imgTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        //setIconImage(imgTitulo);
         
         this.setVisible(true);
     }
