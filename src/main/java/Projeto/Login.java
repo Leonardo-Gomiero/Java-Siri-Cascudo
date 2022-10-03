@@ -39,10 +39,9 @@ public class Login extends javax.swing.JFrame {
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
         setResizable(false);
         
-        URL url = this.getClass().getResource("/Images/KAREN.png");
-        System.out.println(url);
-        //Image imgTitulo = Toolkit.getDefaultToolkit().getImage(url);
-        //setIconImage(imgTitulo);
+        URL url = this.getClass().getResource("/Images/caren.png");
+        Image imgTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        setIconImage(imgTitulo);
         
         this.setVisible(true);
     }
@@ -294,7 +293,6 @@ public class Login extends javax.swing.JFrame {
                 System.out.println(nome);
 
             } catch (SQLException ex) {
-                Logger.getLogger(Entrar.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             dispose();

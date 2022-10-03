@@ -2,8 +2,10 @@ package Projeto;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.List;
 import java.awt.Toolkit;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,6 +29,11 @@ public class PedidoSendoFeito extends javax.swing.JFrame {
         
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        
+        URL url = this.getClass().getResource("/Images/caren.png");
+        Image imgTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        setIconImage(imgTitulo);
+        
         setResizable(false);
     }
 

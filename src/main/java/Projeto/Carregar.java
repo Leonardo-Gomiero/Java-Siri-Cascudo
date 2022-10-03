@@ -4,9 +4,8 @@
  */
 package Projeto;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import java.awt.*;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,6 +30,11 @@ public class Carregar extends javax.swing.JFrame {
         
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+
+        URL url = this.getClass().getResource("/Images/caren.png");
+        Image imgTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        setIconImage(imgTitulo);
+
         setResizable(false);
     }
 
@@ -74,33 +78,33 @@ public class Carregar extends javax.swing.JFrame {
         BarraCarrregando.setForeground(new java.awt.Color(102, 255, 102));
         BarraCarrregando.setToolTipText("");
         BarraCarrregando.setName(""); // NOI18N
-        PanLogin.add(BarraCarrregando, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 524, 28));
+        PanLogin.add(BarraCarrregando, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 524, 28));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Computer Assistent Remote Embedded Network");
-        PanLogin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        PanLogin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
-        LblCAREN.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        LblCAREN.setFont(new java.awt.Font("Showcard Gothic", 0, 48)); // NOI18N
         LblCAREN.setForeground(new java.awt.Color(255, 255, 255));
         LblCAREN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblCAREN.setText("C.A.R.E.N.");
-        PanLogin.add(LblCAREN, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
+        PanLogin.add(LblCAREN, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
 
-        LblProcesso.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        LblProcesso.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
         LblProcesso.setForeground(new java.awt.Color(255, 255, 255));
         LblProcesso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblProcesso.setText("Processo");
-        PanLogin.add(LblProcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+        PanLogin.add(LblProcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, -1));
 
-        LblProgresso.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        LblProgresso.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
         LblProgresso.setForeground(new java.awt.Color(255, 255, 255));
-        LblProgresso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblProgresso.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         LblProgresso.setText("0%");
-        PanLogin.add(LblProgresso, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, -1, -1));
+        PanLogin.add(LblProgresso, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 50, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Desktop\\CAREN.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\SiteRestaurante\\imagens\\CAREN.png")); // NOI18N
         PanLogin.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 680, 390));
 
         PaneEntrar.add(PanLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 680, 400));

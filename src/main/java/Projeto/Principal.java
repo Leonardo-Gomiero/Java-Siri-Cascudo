@@ -23,6 +23,7 @@ public class Principal {
         
         JanCarregar.setVisible(true);
         
+        
         try{
             for(int i = 0; i <= 100; i++){
                 JanCarregar.LblProgresso.setText(i + "%");

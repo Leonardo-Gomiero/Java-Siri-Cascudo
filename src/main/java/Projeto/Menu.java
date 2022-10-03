@@ -6,7 +6,9 @@ package Projeto;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,6 +36,11 @@ public class Menu extends javax.swing.JFrame {
         
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        
+        URL url = this.getClass().getResource("/Images/caren.png");
+        Image imgTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        setIconImage(imgTitulo);
+        
         setResizable(false);
     }
 
@@ -51,7 +58,6 @@ public class Menu extends javax.swing.JFrame {
         LblNome = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         LblNivel = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         P1 = new javax.swing.JPanel();
@@ -66,6 +72,7 @@ public class Menu extends javax.swing.JFrame {
         LblFornecedor = new javax.swing.JLabel();
         P6 = new javax.swing.JPanel();
         LblFuncionarios = new javax.swing.JLabel();
+        LblLogout = new javax.swing.JLabel();
         TblMenu = new javax.swing.JTabbedPane();
         M1 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
@@ -153,62 +160,28 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LblNome.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         LblNome.setForeground(new java.awt.Color(154, 217, 205));
+        LblNome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         LblNome.setText("Usuário");
+        jPanel2.add(LblNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 15, 290, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(154, 217, 205));
         jLabel3.setText("Nível");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
 
         LblNivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         LblNivel.setForeground(new java.awt.Color(154, 217, 205));
         LblNivel.setText("1");
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\SiteRestaurante\\imagens\\logoPequeno.png")); // NOI18N
+        jPanel2.add(LblNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Showcard Gothic", 0, 48)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(154, 217, 205));
         jLabel11.setText("C.A.R.E.N.");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(55, 55, 55)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(LblNome)
-                        .addGap(8, 8, 8))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(LblNivel)
-                        .addContainerGap())))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel12)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(LblNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(LblNivel))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 530, 70));
 
@@ -432,6 +405,13 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
+        LblLogout.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leonardo\\Documents\\SiteRestaurante\\imagens\\logout.png")); // NOI18N
+        LblLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblLogoutMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -442,11 +422,15 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(P4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(P5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(P6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(LblLogout)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
+                .addContainerGap(61, Short.MAX_VALUE)
                 .addComponent(P1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(P2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -458,7 +442,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(P5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(P6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
+                .addGap(18, 18, 18)
+                .addComponent(LblLogout)
+                .addGap(21, 21, 21))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 470));
@@ -1835,6 +1821,15 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_P1MouseClicked
 
+    private void LblLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblLogoutMouseClicked
+        // TODO add your handling code here:
+        Login JanLogin = new Login();
+        
+        dispose();
+        
+        JanLogin.setVisible(true);
+    }//GEN-LAST:event_LblLogoutMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1886,6 +1881,7 @@ public class Menu extends javax.swing.JFrame {
     public javax.swing.JLabel LblFornecedor;
     public javax.swing.JLabel LblFuncionarios;
     private javax.swing.JLabel LblInsumo;
+    private javax.swing.JLabel LblLogout;
     public javax.swing.JLabel LblNivel;
     public javax.swing.JLabel LblNome;
     private javax.swing.JLabel LblPedido;
@@ -1934,7 +1930,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
